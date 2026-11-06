@@ -20,11 +20,26 @@ An Omarchy bar widget (`zoltanf.workspaces`) that replaces the stock
 ## Install
 
 ```sh
-git clone https://github.com/zoltanf/omarchy-workspaces ~/.config/omarchy/plugins/zoltanf.workspaces
+omarchy plugin add https://github.com/zoltanf/omarchy-workspaces.git --enable
 ```
 
-In `~/.config/omarchy/shell.json`, replace `"id": "omarchy.workspaces"` in the
-bar layout with `"id": "zoltanf.workspaces"`, then run `omarchy restart shell`.
+The plugin declares itself a replacement for `omarchy.workspaces`
+(`"clonedFrom": "omarchy.workspaces"` in `manifest.json`), so enabling it puts
+it in the stock widget's place in the bar. No extra packages are needed.
+
+## Removal
+
+To go back to the stock widget, disable this one:
+
+```sh
+omarchy plugin disable zoltanf.workspaces
+```
+
+To uninstall it completely:
+
+```sh
+omarchy plugin remove zoltanf.workspaces
+```
 
 ## License
 
